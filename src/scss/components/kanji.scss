@@ -1,0 +1,25 @@
+@use '../utils' as *;
+
+.kanji {
+	max-width: rem(500);
+	height: rem(250);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+
+	@include breakpoint-down(small) {
+		height: rem(150);
+	}
+
+	&__display {
+		font-size: rem(80);
+		font-weight: 600;
+		color: var(--dark-gray);
+		letter-spacing: rem(10);
+
+		@include breakpoint-down(small) {
+			font-size: rem(60);
+		}
+	}
+}

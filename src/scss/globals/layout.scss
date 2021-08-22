@@ -1,0 +1,10 @@
+@use '../utils' as *;
+
+.kanji-app {
+	max-width: rem(1110);
+	padding: 0 rem(25);
+	margin: 0 auto;
+	@include breakpoint(large) {
+		padding: 0;
+	}
+}

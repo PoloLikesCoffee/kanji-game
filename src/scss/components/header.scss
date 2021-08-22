@@ -1,0 +1,32 @@
+@use '../utils' as *;
+
+.header {
+	padding: rem(20);
+	text-align: center;
+	margin: rem(10) 0;
+
+	@include breakpoint-down(small) {
+		padding: rem(10);
+	}
+
+	&__main {
+		color: var(--dark-gray);
+		font-family: var(--font-primary);
+		font-weight: 700;
+		font-size: rem(65);
+
+		@include breakpoint-down(small) {
+			font-size: rem(50);
+		}
+	}
+	&__sub {
+		color: var(--light-gray);
+		font-family: var(--font-secondary);
+		font-weight: 300;
+		font-size: rem(55);
+
+		@include breakpoint-down(small) {
+			font-size: rem(40);
+		}
+	}
+}

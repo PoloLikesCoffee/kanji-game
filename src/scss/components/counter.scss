@@ -1,0 +1,33 @@
+@use '../utils' as *;
+
+.counter {
+	max-width: rem(500);
+	height: rem(50);
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin: 0 auto;
+
+	&__title {
+		font-size: rem(20);
+		color: var(--light-gray);
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+
+		@include breakpoint-down(small) {
+			font-size: rem(15);
+		}
+	}
+
+	&__display {
+		font-size: rem(35);
+		color: var(--dark-gray);
+		letter-spacing: rem(5);
+		margin-left: rem(20);
+
+		@include breakpoint-down(small) {
+			font-size: rem(27);
+		}
+	}
+}

@@ -1,0 +1,33 @@
+@use '../utils' as *;
+
+.typearea {
+	max-width: rem(500);
+	height: rem(250);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+
+	&__input {
+		outline: none;
+		border: none;
+		border-bottom: 3px solid var(--dark-gray);
+		font-size: rem(40);
+		color: var(--light-gray);
+		text-align: center;
+
+		@include breakpoint-down(small) {
+			font-size: rem(30);
+		}
+	}
+
+	&__input:focus {
+		border-bottom: 6px solid var(--dark-gray);
+	}
+
+	::placeholder {
+		font-size: rem(35);
+		font-weight: 300;
+		opacity: 0.2;
+	}
+}
