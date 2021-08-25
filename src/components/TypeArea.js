@@ -1,6 +1,6 @@
 import { React, useState } from 'react';
 
-const TypeArea = ({ currentKanji, checkAnswer }) => {
+const TypeArea = ({ checkAnswer }) => {
 	const [inputUser, setInputUser] = useState('');
 
 	const onSubmitInput = (event) => {
