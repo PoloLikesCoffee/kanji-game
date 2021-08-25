@@ -13,11 +13,20 @@ function App() {
 	// const [goodAnswers, setGoodAnswers] = useState(0);
 	const goodAnswersRef = useRef(0);
 
+	const shuffleArray = (array) => {
+		for (let i = array.length - 1; i > 0; i--) {
+			const j = Math.floor(Math.random() * (i + 1));
+			[array[i], array[j]] = [array[j], array[i]];
+		}
+	};
+
 	const fetchKanji = async () => {
 		try {
-			const response = await fetch('./kanji.json');
+			const response = await fetch('./kanji1.json');
 			const data = await response.json();
-			return data;
+			shuffleArray(data);
+			// console.log(data.slice(0, 10));
+			return data.slice(0, 10);
 		} catch (error) {
 			alert(error);
 		}
@@ -51,7 +60,7 @@ function App() {
 		if (answer === currentKanji.reading) {
 			// setGoodAnswers((goodAnswers) => goodAnswers + 1);
 			goodAnswersRef.current = goodAnswersRef.current + 1;
-			console.log('Good!');
+			// console.log('Good!');
 			kanjiListRef.current = kanjiListRef.current.filter(
 				(prevActions) => prevActions.word !== currentKanji.word
 			);
@@ -66,7 +75,7 @@ function App() {
 				reset();
 			}
 		} else {
-			console.log('No good!');
+			// console.log('No good!');
 			setRemainingChance((remainingChance) => remainingChance - 1);
 			if (remainingChance <= 1) {
 				kanjiListRef.current = kanjiListRef.current.filter(
@@ -97,7 +106,7 @@ function App() {
 	return (
 		<div className="kanji-app">
 			<Header />
-			<Kanji currentKanji={currentKanji} />
+			<Kanji currentKanji={currentKanji} counterChance={remainingChance} />
 			<Counter counterChance={remainingChance} />
 			<TypeArea currentKanji={currentKanji} checkAnswer={checkAnswer} />
 		</div>

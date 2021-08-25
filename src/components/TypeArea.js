@@ -2,9 +2,6 @@ import { React, useState } from 'react';
 
 const TypeArea = ({ currentKanji, checkAnswer }) => {
 	const [inputUser, setInputUser] = useState('');
-	// if (currentKanji) {
-	// 	console.log(currentKanji.reading);
-	// }
 
 	const onSubmitInput = (event) => {
 		event.preventDefault();

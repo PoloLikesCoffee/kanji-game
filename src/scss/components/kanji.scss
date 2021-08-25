@@ -7,9 +7,23 @@
 	justify-content: center;
 	align-items: center;
 	margin: 0 auto;
+	position: relative;
 
 	@include breakpoint-down(small) {
 		height: rem(150);
+	}
+
+	&__hint {
+		position: absolute;
+		top: rem(20);
+		font-size: rem(30);
+		font-weight: 300;
+		opacity: 0.5;
+
+		@include breakpoint-down(small) {
+			top: rem(0);
+			font-size: rem(20);
+		}
 	}
 
 	&__display {
