@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Kanji from './components/Kanji';
 import Counter from './components/Counter';
 import TypeArea from './components/TypeArea';
+import { randomItem, shuffleArray } from './components/utils/utils';
 
 function App() {
 	//const [kanjiList, setKanjiList] = useState([]);
@@ -12,13 +13,6 @@ function App() {
 	const [remainingChance, setRemainingChance] = useState(5);
 	// const [goodAnswers, setGoodAnswers] = useState(0);
 	const goodAnswersRef = useRef(0);
-
-	const shuffleArray = (array) => {
-		for (let i = array.length - 1; i > 0; i--) {
-			const j = Math.floor(Math.random() * (i + 1));
-			[array[i], array[j]] = [array[j], array[i]];
-		}
-	};
 
 	const fetchKanji = async () => {
 		try {
@@ -30,14 +24,6 @@ function App() {
 		} catch (error) {
 			alert(error);
 		}
-	};
-
-	const roundNumber = (number) => {
-		return Math.floor(Math.random() * number);
-	};
-
-	const randomItem = (array) => {
-		return array[roundNumber(array.length)];
 	};
 
 	const getKanji = () => {
