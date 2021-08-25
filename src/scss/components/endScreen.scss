@@ -1,0 +1,69 @@
+@use '../utils' as *;
+
+.end-screen {
+	z-index: 1000;
+	position: fixed;
+	display: none;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.3);
+
+	&__content {
+		position: relative;
+		top: 15%;
+		max-width: rem(500);
+		height: rem(500);
+		color: var(--light-gray);
+		background-color: var(--white);
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		font-size: rem(34);
+
+		@include breakpoint-down(small) {
+			margin: 0 rem(75);
+			font-size: rem(22);
+		}
+	}
+
+	&__answer {
+		max-width: rem(400);
+		text-align: center;
+
+		span {
+			color: var(--dark-gray);
+			margin: 0 rem(2);
+			font-weight: 600;
+		}
+	}
+
+	&__button {
+		width: fit-content;
+		height: rem(30);
+		cursor: pointer;
+		border: none;
+		background: none;
+		margin: rem(30) rem(1);
+		font-size: rem(30);
+		font-weight: 600;
+		color: var(--dark-gray);
+		text-align: center;
+
+		@include breakpoint-down(small) {
+			width: rem(125);
+			font-size: rem(20);
+		}
+	}
+
+	&__button:hover {
+		color: var(--light-gray);
+	}
+}
+
+.end-screen.visible {
+	display: block;
+}

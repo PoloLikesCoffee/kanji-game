@@ -1,14 +1,4 @@
 [
 	{ "word": "白", "reading": "しろ", "meaning": "white" },
-	{ "word": "黒", "reading": "くろ", "meaning": "black" },
-	{ "word": "赤", "reading": "あか", "meaning": "red" },
-	{ "word": "青", "reading": "あお", "meaning": "blue" },
-	{ "word": "緑", "reading": "みどり", "meaning": "green" },
-	{ "word": "黄色", "reading": "きいろ", "meaning": "yellow" },
-	{ "word": "オレンジ", "reading": "おれんじ", "meaning": "orange" },
-	{ "word": "桃色", "reading": "ももいろ", "meaning": "pink" },
-	{ "word": "水色", "reading": "みずいろ", "meaning": "light blue" },
-	{ "word": "黄緑", "reading": "きみどり", "meaning": "yellow green" },
-	{ "word": "紫", "reading": "むらさき", "meaning": "purple" },
-	{ "word": "茶色", "reading": "ちゃいろ", "meaning": "brown" }
+	{ "word": "黒", "reading": "くろ", "meaning": "black" }
 ]
